@@ -9,6 +9,17 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text(mainController.user.username));
+    return Scaffold(
+      appBar: AppBar(
+        title: Text( mainController.user.username),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Image.network(mainController.user.profileImageURL),
+          Text(mainController.user.username),
+       ],
+      ),
+    );
   }
 }
