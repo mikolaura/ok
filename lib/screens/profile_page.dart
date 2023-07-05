@@ -25,7 +25,7 @@ class _ProfilePageState extends State<ProfilePage> {
       appBar: AppBar(
         title: Text( widget.mainController.user.username),
         actions: [
-          IconButton(onPressed: (){Get.to(ChangeScreen());}, icon: Icon(Icons.change_circle))
+          IconButton(onPressed: (){Get.to(ChangeScreen(user: widget.mainController.user,));}, icon: Icon(Icons.change_circle))
         ],
       ),
       body: Row(
