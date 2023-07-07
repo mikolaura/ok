@@ -21,7 +21,7 @@ class ChangeScreen extends StatefulWidget {
 class _ChangeScreenState extends State<ChangeScreen> {
   ChangeController changeController = Get.put(ChangeController());
   TextEditingController _usernameController = TextEditingController();
-  late File? image;
+   File? image;
   void getImage() async {
     final ImagePicker picker = ImagePicker();
     final XFile? image_ = await picker.pickImage(source: ImageSource.gallery);
@@ -35,8 +35,7 @@ class _ChangeScreenState extends State<ChangeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Padding(
-          padding: EdgeInsets.all(8.0),
+        
           child: 
               Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
                 IconButton(
@@ -53,6 +52,8 @@ class _ChangeScreenState extends State<ChangeScreen> {
                       fillColor: Color.fromARGB(176, 158, 158, 158)),
                 ),
                 Stack(children: [
+                  IconButton(onPressed: change, icon: Icon(Icons.add)),
+
                   Container(
                     margin: const EdgeInsets.only(left: 10),
                     width: 38 * 3,
@@ -70,13 +71,11 @@ class _ChangeScreenState extends State<ChangeScreen> {
                         borderRadius: BorderRadius.only(topRight: Radius.circular(10),bottomRight: Radius.circular(10))
                         ),
                   ),
-                  IconButton(onPressed: change, icon: Icon(Icons.add))
                 ])
               ]),
           
           
         ),
-      ),
-    );
+      );
   }
 }

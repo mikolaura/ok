@@ -11,7 +11,7 @@ class ChangeController extends GetxController {
     var pic = lastProfilePicURL;
     var _username = username.isEmpty ? lastUsername : username;
     if (image !=null){
-      Reference ref = FirebaseStorage.instance.ref().child('picture').child(uid);
+      Reference ref = FirebaseStorage.instance.ref().child(uid);
       UploadTask uploadTask = ref.putFile(image);
       TaskSnapshot snap = await uploadTask;
       String downloadUrl = await snap.ref.getDownloadURL();
