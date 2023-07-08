@@ -8,8 +8,64 @@ class AddPage extends StatefulWidget {
 }
 
 class _AddPageState extends State<AddPage> {
+  TextEditingController _titleContoller = TextEditingController();
+  TextEditingController _anonsContoller = TextEditingController();
+  TextEditingController _textContoller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    return Text('Add page');
+    return Center(
+      child: Column(
+        children: [
+          InkWell(
+              onTap: () {print('object');},
+              child: Image.network(
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5WiuJQWamgq2iVSz7Af-UgVlj3j7fskOC0tUXraUs&s',
+                width: 150,
+                height: 200,
+              )),
+          const SizedBox(height: 40,),
+          TextField(
+            controller: _titleContoller,
+            decoration: InputDecoration(
+                hintText: 'Title',
+                filled: true,
+                fillColor: Color.fromARGB(176, 158, 158, 158)),
+          ),
+          const SizedBox(height: 20,),
+
+          TextField(
+            controller: _anonsContoller,
+            decoration: InputDecoration(
+                hintText: 'Anons',
+                filled: true,
+                fillColor: Color.fromARGB(176, 158, 158, 158)),
+          ),
+          const SizedBox(height: 20,),
+          TextField(
+            controller: _textContoller,
+            decoration: InputDecoration(
+                hintText: 'Text of Article',
+                filled: true,
+                fillColor: Color.fromARGB(176, 158, 158, 158)),
+          ),
+          const SizedBox(height: 50,),
+          InkWell(
+            onTap: () {},
+            child: Container(
+              width: 200,
+              decoration: BoxDecoration(
+                  color: Colors.purple,
+                  borderRadius: BorderRadius.circular(8.0)),
+              child: Center(
+                  child: Text(
+                'Add',
+                style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+              )),
+            ),
+          )
+        ],
+      ),
+    );
   }
 }
